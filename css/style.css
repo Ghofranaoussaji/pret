@@ -524,7 +524,7 @@ overridden when the desktop styles are implemented
     transform: scale(1.1);
   }
   .col {
-    margin-right: 60px; /* Ajustez la marge à droite selon vos préférences */
+    margin-right: 50px; /* Ajustez la marge à droite selon vos préférences */
 }
 
 .col:last-child {

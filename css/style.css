@@ -17,14 +17,7 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
-@media only screen and (max-width: 767px) {
-    /* ... (styles spécifiques pour les écrans mobiles) ... */
-}
 
-/* Media queries pour les tablettes */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    /* ... (styles spécifiques pour les tablettes) ... */
-}
 
 
 a{
@@ -230,41 +223,7 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
   border: 3px solid #0065fc;
 }*/
 
-.big-container{ /*Sets the sryling for the accommodation and popular container 
-  and ensures that the default for mobile and tablets is that the most popular appears first*/
-  display: flex;
-  flex-direction: column-reverse;
-  flex-wrap: wrap;
-  align-content: center;
-  width: 100%;
-  background-color: #f2f2f2;
-  justify-content: space-between;
-}
 
-.accom-container, .act-container{  /*Styles the common elements for mobile for the activities and accommodation sections for mobile*/
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: 20px;
-  width: 100%;
-  padding:20px;
-}
-
-.accom-container{ /*Sets the background colour for mobile displays for the accommodations section*/
-  background-color: #ffffff;
-}
-
-.popular-container{  /*Styles the most popular section for mobile*/
-  padding:20px;
-  width: 100%;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-  gap:15px;
-  padding-bottom: 25px;
-}
 
 .row-container{ /*Styles and aligns the cards in the accommodation section*/
   display: flex;
@@ -282,11 +241,7 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
   width:  90vw;
 }
 
-.popular{ /*Styles the cards for the popular section for mobile*/
-  flex-direction: row;
-  width:100%;
-  height: 100%;
-}
+
 
 .popular img{ /* Styles the images  for the popular section*/
   border-radius: 20px 0px 0px 20px;
@@ -294,20 +249,13 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
   width: 120px;
 }
 
-.accommodation ,.card{ /*Displays the accommodation and activities cards in a column for mobile*/
-  flex-direction: column;
-}
+
 
 .accommodation, .popular{ /*Pads the cards for accommodation and popular sections*/
   padding: 2px;
 }
 
-.accommodation img, .card img{/*Styles the images for the accommodation and activities sections for mobile*/
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 20px 20px 0px 0px;
-}
+
 
 .container{ /*Styles the white text and star areas for the acccomodation and popular sections*/
   display: flex;
@@ -365,12 +313,7 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
   border-left: 3px solid black;
 }
 
-.wrapper{ /*Sets the alignment properties for the  text container for the footer in mobile */
-  display: flex;
-  flex-direction: column;
-  width:100%;
-  max-width: 1080px;
-}
+
 
 .col{ /*Arranges the items iinto columns, evenly spaced,
   used in the activities section and the footer*/
@@ -378,54 +321,45 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
   display: flex;
   flex-direction: column;
 }
-
-
-/*Tablet styles, overwrites properties declared previously when the screen width 
-becomes larger than or equal to 768 pixels, some of these properties will be 
-overridden when the desktop styles are implemented
-*/
-@media screen and (min-width: 768px){
-
-  header{ /*Rearranges the header from a column to a row and changes the spacing*/
-    flex-direction: row;
-    justify-content: space-between;
+.accom-container{ /*Changes the properties for the accommodation section when on 
+    a desktop */
+    flex-wrap: wrap;
+    height: 100%;
+    background-color: #f2f2f2;
+    width:100%;
+    flex: 2;
   }
 
-  main{ /*Changes the main section of the page to the correct sizes
+  .popular-container{ /*Changes the neccesary properties for the popular section for desktop*/
+    height: fit-content;
+    width:100%;
+  }
+  .card-style:hover{ /*Makes the cards slightly bigger on hover*/
+    transform: scale(1.1);
+  }
+  .col {
+    margin-right: 50px; /* Ajustez la marge à droite selon vos préférences */
+}
+
+.col:last-child {
+    margin-right: 0; /* Pour éviter la marge à droite pour la dernière colonne */
+}
+
+main{ /*Changes the main section of the page to the correct sizes
     for the desktop and tablet styles*/
     margin: 0 auto;
     width:95%;
     max-width: 1080px;
   }
 
+
   .no-display-desktop{/*Hides any items not needed for desktop and tablet styles*/
     display: none;
   }
 
-  .mob-margin{ /*Removes the margins set for the mobile styles*/
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .submit, .deskimage{ /*Shows the properies hidden in the mobile styles 
-    needed for the desktop and tablet styles*/
-    display: flex;
-  }
-
-  .nav{ /*Reverses some of the mobile parameters and sets new ones for the 
-    nab items*/
-    padding: 20px;
-    padding-top: 40px;
-    min-width: 0px;
-    border-bottom: none;
-    border-top: 3px solid #f2f2f2;
-  }
-
-  .nav:hover{ /*Changes the blue line from underneath the link to over on hover in
-    in the nav bar*/
-    border-bottom: none;
-    border-top: 3px solid #0065fc;
-    padding-top:40px;
+  header{ /*Rearranges the header from a column to a row and changes the spacing*/
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .big-container{ /*Changes the colour of the container for the accommodation and popular
@@ -469,6 +403,23 @@ overridden when the desktop styles are implemented
     gap: 20px; /* Espacement entre les cartes, ajustez selon vos préférences */
     margin-bottom: 20px;
   }
+
+  .nav{ /*Reverses some of the mobile parameters and sets new ones for the 
+    nab items*/
+    padding: 20px;
+    padding-top: 40px;
+    min-width: 0px;
+    border-bottom: none;
+    border-top: 3px solid #f2f2f2;
+  }
+
+  .nav:hover{ /*Changes the blue line from underneath the link to over on hover in
+    in the nav bar*/
+    border-bottom: none;
+    border-top: 3px solid #0065fc;
+    padding-top:40px;
+  }
+
   .card {
     background-color: white;
     border-radius: 8px 8px 5px 5px; /* Ajustez ce chiffre pour modifier la courbure de la bordure supérieure */
@@ -485,7 +436,7 @@ overridden when the desktop styles are implemented
 
 .card img {
     width: 100%;
-    height: 259px;
+    height: 380px;
     object-fit: cover;
     border-radius: 8px 8px 5px 5px; /* Ajustez ce chiffre pour modifier la courbure de la bordure supérieure */
 }
@@ -496,52 +447,17 @@ overridden when the desktop styles are implemented
 }
 
 
-
-
-  
   /*Changes the container for the text in the footer to display in a row*/
   .wrapper{
     flex-direction: row;
     width:100%;
     max-width: 1080px;
   }
- 
-}
-
-/* Desktop Styles - sets properties when the screen is at least 992 pixels wide*/
-@media only screen and (min-width: 992px) 
-  {
-  .big-container{ /*Changes the container for the accommodation and popular
-    sections into a row from a reverse column, displaying the items in the correct order*/
-    flex-direction: row;
+  .accommodation ,.card{ /*Displays the accommodation and activities cards in a column for mobile*/
+    flex-direction: column;
   }
 
-  .accom-container{ /*Changes the properties for the accommodation section when on 
-    a desktop */
-    flex-wrap: wrap;
-    height: 100%;
-    background-color: #f2f2f2;
-    width:100%;
-    flex: 2;
-  }
-
-  .popular-container{ /*Changes the neccesary properties for the popular section 
-    for desktop*/
-    height: fit-content;
-    width:100%;
-  }
-  .card-style:hover{ /*Makes the cards slightly bigger on hover*/
-    transform: scale(1.1);
-  }
-  .col {
-    margin-right: 50px; /* Ajustez la marge à droite selon vos préférences */
-}
-
-.col:last-child {
-    margin-right: 0; /* Pour éviter la marge à droite pour la dernière colonne */
-}
-
-}
-
-
-
+/*Tablet styles, overwrites properties declared previously when the screen width 
+becomes larger than or equal to 768 pixels, some of these properties will be 
+overridden when the desktop styles are implemented
+*/

@@ -106,6 +106,17 @@ header{ /*Default properties for the header, displaying the logo and the nav lin
 .no-display-mobile{ /*Hides the elements only used for desktop and tablet*/
   display: none;
 }
+
+.wrapper{ /*Sets the alignment properties for the  text container for the footer in mobile */
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    max-width: 1080px;
+  }
+  .submit, .deskimage{ /*Shows the properies hidden in the mobile styles 
+    needed for the desktop and tablet styles*/
+    display: flex;
+  }
   
 .search form { /*IStyles the search form, this will remain unchanged*/
   display: flex;
@@ -115,6 +126,12 @@ header{ /*Default properties for the header, displaying the logo and the nav lin
   display: inline-flex;
   height: 100%;
 }
+.popular{ /*Styles the cards for the popular section for mobile*/
+    flex-direction: row;
+    width:100%;
+    height: 100%;
+  }
+
 
 .text-box{/*Adds a border to the top and bottom of the text-box in the search element*/
   border-top:3px solid #f2f2f2;
@@ -122,7 +139,21 @@ header{ /*Default properties for the header, displaying the logo and the nav lin
   border-left:none;
   border-right: none;
 }
+.big-container{ /*Sets the sryling for the accommodation and popular container 
+    and ensures that the default for mobile and tablets is that the most popular appears first*/
+  
+    gap:20px;
+    background-color: white;
+    display: flex;
+    /*flex-direction: column-reverse;*/
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    
+    justify-content: space-between;
 
+   
+  }
 .nav{ /*Styles the nav bar for mobile display*/
   display:flex;
   justify-content: center;
@@ -131,6 +162,35 @@ header{ /*Default properties for the header, displaying the logo and the nav lin
   min-width: 50vw;
   padding: 10px;
 }
+.accom-container{ /*Sets the background colour for mobile displays for the accommodations section*/
+    background-color: #ffffff;
+  }
+  .mob-margin{ /*Removes the margins set for the mobile styles*/
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+.accommodation img, .card img{/*Styles the images for the accommodation and activities sections for mobile*/
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+    }
+    
+      
+    .popular-container{  /*Styles the most popular section for mobile*/
+        padding:20px;
+        width: 100%;
+        border-radius: 20px;
+        display: flex;
+       flex-direction: column;                   
+        justify-content: space-between;
+        height: fit-content;
+        width:100%;
+        flex: 1;
+        gap:15px;
+        padding-bottom: 25px;
+      }
+    
 
 nav { /*Arranges the nav items in a row and makes a margin above them*/
   display:flex;
@@ -226,6 +286,8 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
 
 
 .row-container{ /*Styles and aligns the cards in the accommodation section*/
+    
+    
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -258,10 +320,12 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
 
 
 .container{ /*Styles the white text and star areas for the acccomodation and popular sections*/
+
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding:5px;
+  
 }
 
 .container .medium-text, .container .bold-text{ /*Styles the text in the accommodation and popular sections*/
@@ -288,6 +352,23 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
   align-items: center;
   gap: 5px;
 }
+.wrapper{ /*Sets the alignment properties for the  text container for the footer in mobile */
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    max-width: 1080px;
+  }
+  .popular{ /*Styles the cards for the popular section for mobile*/
+    flex-direction: row;
+    width:100%;
+    height: 100%;
+  }
+  
+  .mob-margin{ /*Removes the margins set for the mobile styles*/
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
 
 .information .icon{ /*Styles the information icon*/
   display: flex;
@@ -328,12 +409,11 @@ nav a:hover { /*When the navs are hovered over, a border is displayed underneath
     background-color: #f2f2f2;
     width:100%;
     flex: 2;
+    padding: 20px; 
+    border-radius: 20px;
   }
 
-  .popular-container{ /*Changes the neccesary properties for the popular section for desktop*/
-    height: fit-content;
-    width:100%;
-  }
+  
   .card-style:hover{ /*Makes the cards slightly bigger on hover*/
     transform: scale(1.1);
   }
@@ -362,11 +442,7 @@ main{ /*Changes the main section of the page to the correct sizes
     justify-content: space-between;
   }
 
-  .big-container{ /*Changes the colour of the container for the accommodation and popular
-    sections and adds a space between the two sections*/
-    gap:20px;
-    background-color: white;
-  }
+ 
 
   .accommodation{ /*Sets desktop and tablet properties for the accommodation cards */
     justify-content: space-between;
